@@ -17,7 +17,7 @@ const navigation: NavigationItem[] = [
   { name: 'Sobre mim', href: '/' },
   { name: 'Certificados', href: '/certificados' },
   { name: 'Atividade Extracurricular', href: '/atividades' },
-  { name: 'GitHub', href: '/projetos' },
+  { name: 'Projetos', href: '/projetos' },
 ];
 
 export default function NavBar() {
@@ -51,7 +51,7 @@ export default function NavBar() {
                         key={item.name}
                         to={item.href}
                         className={classNames(
-                          location.pathname === item.href ? `bg-gray-900 ${isDarkTheme ? 'text-white' : 'text-white'}` : `text-${isDarkTheme ? 'white' : 'gray-700'} hover:bg-gray-700 hover:text-white`,
+                          location.pathname === item.href ? `${isDarkTheme ? 'bg-white' : 'bg-gray-700'} ${isDarkTheme ? 'text-gray-700' : 'text-white'}` : `text-${isDarkTheme ? 'white' : 'gray-700'} ${isDarkTheme ? 'hover:bg-white' : 'hover:bg-gray-700'} ${isDarkTheme ? 'hover:text-gray-700' : 'hover:text-white'}`,
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                       >
@@ -72,7 +72,7 @@ export default function NavBar() {
                   key={item.name}
                   to={item.href}
                   className={classNames(
-                    location.pathname === item.href ? ` ${isDarkTheme ? 'text-white' : 'text-gray-700'}` : `text-${isDarkTheme ? 'white' : 'gray-700'} hover:bg-gray-700 hover:text-white`,
+                    location.pathname === item.href ? ` ${isDarkTheme ? 'text-white' : 'text-gray-700'}` : `text-${isDarkTheme ? 'white' : 'gray-700'} hover:bg-gray-700 hover:${isDarkTheme ? 'text-white' : 'text-gray-700'}`,
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                 >
