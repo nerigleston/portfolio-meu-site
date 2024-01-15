@@ -7,6 +7,7 @@ import Atividades from '@/pages/atividadesExtra';
 import Home from '@/pages/home';
 import Projetos from '@/pages/projetos';
 import Certificados from '@/pages/certificados';
+import NotFoundPage from '@/pages/error404';
 
 export default function Routers() {
   return (
@@ -20,7 +21,7 @@ export default function Routers() {
               <Route path='/atividades' element={<Atividades />} />
               <Route path='/projetos' element={<Projetos />} />
               <Route path='/certificados' element={<Certificados />} />
-              <Route path='*' element={<Home />} />
+              <Route path='*' element={<NotFoundPage />} />
             </React.Fragment>
           </Route>
         </Routes>
