@@ -47,21 +47,21 @@ function APICertificados() {
           Meus Certificados
         </a>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+      <div className="flex justify-center items-center text-center">
         {loading ? (
-          <div className="flex justify-center items-center w-full h-full fixed top-0 left-0">
-            <Loading />
-          </div>
+          <Loading />
         ) : (
-          currentCertificates.map((certificado, index) => (
-            <div key={index} className={`bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>
-              <img src={certificado.certificadoimg} alt={`Certificado ${certificado.curso}`} className="w-full h-40 object-cover mb-4 rounded-md" />
-              <p className="text-lg font-bold mb-2">Instituição: {certificado.instituicao}</p>
-              <p className={`mb-2 ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>Competências: {certificado.materia}</p>
-              <p className={`mb-2 ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>Data: {certificado.data}</p>
-              <p className={`${isDarkTheme === 'dark' ? 'text-blue-400' : 'text-blue-500'}`}>Curso: {certificado.curso}</p>
-            </div>
-          ))
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+            {currentCertificates.map((certificado, index) => (
+              <div key={index} className={`bg-gray-300 dark:bg-gray-800 p-6 rounded-lg shadow-md ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>
+                <img src={certificado.certificadoimg} alt={`Certificado ${certificado.curso}`} className="w-full h-40 object-cover mb-4 rounded-md" />
+                <p className="text-lg font-bold mb-2">Instituição: {certificado.instituicao}</p>
+                <p className={`mb-2 ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>Competências: {certificado.materia}</p>
+                <p className={`mb-2 ${isDarkTheme === 'dark' ? 'text-white' : 'text-gray-700'}`}>Data: {certificado.data}</p>
+                <p className={`${isDarkTheme === 'dark' ? 'text-blue-400' : 'text-blue-500'}`}>Curso: {certificado.curso}</p>
+              </div>
+            ))}
+          </div>
         )}
       </div>
       <div className="mt-8">
